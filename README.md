@@ -1,7 +1,7 @@
-<h1>Leaf 🍃</h1> 
+<h1>FACOMP 🌐</h1> 
 
 <p>
-    <b>A boilerplate that uses Node.js, Typescript, Next.js 15, React 19, Payload CMS 3, Tailwind CSS, Shadcn UI, Eslint and Prettier.</b>
+    <b>A modern website for the Faculty of Computing at Campus Castanhal, built with cutting-edge web technologies including Next.js, React, Payload CMS, Tailwind CSS, Shadcn UI, and more.</b>
 </p>
 
 <h2 id="tech-stack">Tech Stack 💻</h2>
@@ -36,7 +36,7 @@ pnpm dev
 If you want to contribute, clone this repo, create your work branch and get your hands dirty!
 
 ```bash
-git clone https://github.com/aridanpantoja/leaf.git
+git clone https://github.com/aridanpantoja/facomp.git
 ```
 
 ```bash
@@ -53,3 +53,5 @@ At the end, open a Pull Request explaining the problem solved or feature made, i
 <h2 id="license">License 📃 </h2>
 
 This project is under [MIT](./LICENSE) license
+
+Feel free to customize it further if needed! 😊
