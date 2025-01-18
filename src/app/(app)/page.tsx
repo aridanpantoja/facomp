@@ -1,14 +1,6 @@
 import { badgeVariants } from '@/components/ui/badge'
 import { WidthWrapper } from '@/components/width-wrapper'
-import {
-  Book,
-  Bot,
-  ChevronRight,
-  Code,
-  Newspaper,
-  SquareSigma,
-  University,
-} from 'lucide-react'
+import { Book, ChevronRight, Newspaper, University } from 'lucide-react'
 import Link from 'next/link'
 
 export default function Home() {
