@@ -58,7 +58,7 @@ export default function RootLayout({
       >
         <Providers>
           <Navbar />
-          <main className="my-16 flex grow flex-col">{children}</main>
+          <main className="flex grow flex-col">{children}</main>
           <Footer />
         </Providers>
       </body>
