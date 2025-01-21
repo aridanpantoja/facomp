@@ -9,7 +9,7 @@ import { siteConfig } from '@/config'
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b backdrop-blur supports-[backdrop-filter]:bg-background/90">
+    <header className="sticky inset-x-0 top-0 z-50 w-full border-b backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <WidthWrapper>
         <div>
           <div className="flex h-[60px] items-center justify-between py-4">

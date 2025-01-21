@@ -5,8 +5,8 @@ const createSiteConfig = () => {
       href: '/sobre',
     },
     {
-      label: 'Blog',
-      href: '/blog',
+      label: 'Notícias',
+      href: '/noticias',
     },
     {
       label: 'Documentos',
@@ -22,6 +22,84 @@ const createSiteConfig = () => {
     },
   ]
 
+  const footerNav = [
+    {
+      title: 'Tools',
+      links: [
+        {
+          label: 'Desktop apps',
+          href: '/blog',
+        },
+        {
+          label: 'Figma to Framer',
+          href: '/blog',
+        },
+        {
+          label: 'Desktop apps',
+          href: '/blog',
+        },
+        {
+          label: 'Desktop apps',
+          href: '/blog',
+        },
+        {
+          label: 'Desktop apps',
+          href: '/blog',
+        },
+      ],
+    },
+    {
+      title: 'Company',
+      links: [
+        {
+          label: 'Desktop apps',
+          href: '/blog',
+        },
+        {
+          label: 'Desktop apps',
+          href: '/blog',
+        },
+        {
+          label: 'Desktop apps',
+          href: '/blog',
+        },
+        {
+          label: 'Desktop apps',
+          href: '/blog',
+        },
+        {
+          label: 'Desktop apps',
+          href: '/blog',
+        },
+      ],
+    },
+    {
+      title: 'Compare',
+      links: [
+        {
+          label: 'Desktop apps',
+          href: '/blog',
+        },
+        {
+          label: 'Desktop apps',
+          href: '/blog',
+        },
+        {
+          label: 'Desktop apps',
+          href: '/blog',
+        },
+        {
+          label: 'Desktop apps',
+          href: '/blog',
+        },
+        {
+          label: 'Desktop apps',
+          href: '/blog',
+        },
+      ],
+    },
+  ]
+
   const links = {
     github: 'https://github.com/aridanpantoja/leaf',
   }
@@ -33,6 +111,7 @@ const createSiteConfig = () => {
     ogImage: 'https://leaf.com.br/og.jpg',
     links,
     mainNav,
+    footerNav,
   }
 }
 
