@@ -7,14 +7,14 @@ export function Footer() {
     <footer className="w-full border-t">
       <WidthWrapper>
         <div className="py-5 md:py-16">
-          <div className="grid grid-cols-2">
+          <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-0">
             <div className="flex flex-col items-start">
               <Link href="/" className="flex w-fit items-center gap-2">
                 <span className="font-bold">FACOMP</span>
               </Link>
             </div>
 
-            <div className="grid grid-cols-[repeat(2,minmax(150px,1fr))] gap-5 gap-y-10 lg:grid-cols-[repeat(4,minmax(150px,1fr))] lg:gap-0">
+            <div className="grid grid-cols-[repeat(2,minmax(130px,1fr))] gap-5 gap-y-10 lg:grid-cols-[repeat(4,minmax(130px,1fr))] lg:gap-0">
               {siteConfig.footerNav.map((tab, i) => (
                 <div
                   className="flex flex-col items-start gap-2.5 text-sm leading-[1.4em]"

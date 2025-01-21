@@ -46,9 +46,7 @@ export default async function Home() {
 
   return (
     <>
-      <section className="relative py-16 md:py-24 lg:py-32">
-        <div className="absolute inset-0 -z-10 h-full w-full [background:radial-gradient(125%_125%_at_50%_10%,#FFFFFF_50%,#2563EB_150%)] dark:[background:radial-gradient(125%_125%_at_50%_10%,#020817_50%,#3B82F6_150%)]"></div>
-
+      <section>
         <WidthWrapper>
           <div className="relative mx-auto max-w-4xl">
             <div className="text-balance text-center">
@@ -105,7 +103,7 @@ export default async function Home() {
         </WidthWrapper>
       </section>
 
-      <section className="text-balance border-t bg-muted/50 py-16 text-center">
+      <section className="text-balance border-t bg-muted/50 text-center">
         <WidthWrapper>
           <div>
             <div className="space-y-4">

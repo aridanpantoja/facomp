@@ -49,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="h-full" suppressHydrationWarning>
+    <html lang="en" className="h-full w-full" suppressHydrationWarning>
       <body
         className={cn(
           'relative flex h-full w-full flex-col antialiased',

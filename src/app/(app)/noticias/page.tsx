@@ -20,14 +20,24 @@ export default async function BlogPage() {
   })
 
   return (
-    <section className="my-16">
-      <WidthWrapper>
-        <div className="flex w-full flex-col items-center">
-          <h1>Blog Page</h1>
+    <>
+      <section>
+        <WidthWrapper>
+          <div className="mx-auto w-full max-w-3xl items-center space-y-4 text-balance text-center md:space-y-6">
+            <h1>Notícias</h1>
+            <p className="text-muted-foreground">
+              Confira todas as oportunidades, notícias e mais sobre da Faculdade
+              de Computação
+            </p>
+          </div>
+        </WidthWrapper>
+      </section>
 
+      <section className="bg-muted/50">
+        <WidthWrapper>
           <PostsArchive posts={posts.docs} />
-        </div>
-      </WidthWrapper>
-    </section>
+        </WidthWrapper>
+      </section>
+    </>
   )
 }
