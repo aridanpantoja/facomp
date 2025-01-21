@@ -20,9 +20,9 @@ export default async function BlogPage() {
   })
 
   return (
-    <section className="mx-auto max-w-prose">
+    <section className="my-16">
       <WidthWrapper>
-        <div className="flex flex-col items-center">
+        <div className="flex w-full flex-col items-center">
           <h1>Blog Page</h1>
 
           <PostsArchive posts={posts.docs} />

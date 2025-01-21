@@ -1,10 +1,28 @@
-import { PostCard } from '@/components/post-card'
 import { badgeVariants } from '@/components/ui/badge'
 import { WidthWrapper } from '@/components/width-wrapper'
 import { Book, ChevronRight, Newspaper, University } from 'lucide-react'
 import Link from 'next/link'
+import configPromise from '@payload-config'
+import { getPayload } from 'payload'
+import { PostsArchive } from '@/components/posts-archive'
 
-export default function Home() {
+export default async function Home() {
+  const payload = await getPayload({ config: configPromise })
+
+  const posts = await payload.find({
+    collection: 'posts',
+    depth: 1,
+    page: 1,
+    limit: 4,
+    overrideAccess: false,
+    select: {
+      title: true,
+      slug: true,
+      categories: true,
+      meta: true,
+    },
+  })
+
   const PEEKS = [
     {
       title: 'Sobre',
@@ -23,35 +41,6 @@ export default function Home() {
       description: 'Todos os documentos necessários para o seu curso',
       Icon: Book,
       href: '/documentos',
-    },
-  ]
-
-  const POSTS = [
-    {
-      title: 'Ajuste de matrícula para Engenharia de Computação',
-      description: '🎓 Atenção, discentes de Engenharia de Computação!',
-      href: '/noticias/ajuste-de-matricula-para-engenharia-de-computacao',
-      image: '/image.png',
-    },
-    {
-      title: 'Calendário de aulas de 2024.4',
-      description: 'Confira todos os calendários de aulas:',
-      href: '/noticias/ajuste-de-matricula-para-engenharia-de-computacao',
-      image: '/horarios-aulas-web-2.jpg',
-    },
-    {
-      title: 'Edital de Prescrição (Jubilamento) 2024',
-      description:
-        '🎓 LISTA DE ALUNOS CONVOCADOS PELA CHAMADA PÚBLICA A PRESCRIÇÃO 2024 2024 2024',
-      href: '/noticias/ajuste-de-matricula-para-engenharia-de-computacao',
-      image: '/jubilacao-graduacao-web.jpg',
-    },
-    {
-      title: 'Projeto Jiquiri - Resultado Final da Seleção',
-      description:
-        'Confira aqui o resultado final da seleção para o Projeto Jiquiri: Implementando um sistema de irrigação automatizado no Jardim do NEAB/Campus Castanhal.',
-      href: '/noticias/ajuste-de-matricula-para-engenharia-de-computacao',
-      image: '/PROJETO-JIQUIRI-WEB.jpg',
     },
   ]
 
@@ -132,17 +121,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-4">
-              {POSTS.map((post, i) => (
-                <PostCard
-                  key={i}
-                  title={post.title}
-                  description={post.description}
-                  image={post.image}
-                  href={post.href}
-                />
-              ))}
-            </div>
+            <PostsArchive posts={posts.docs} />
           </div>
         </WidthWrapper>
       </section>
