@@ -1,21 +1,21 @@
-import { WidthWrapper } from '@/components/width-wrapper'
+import { PostCard } from '@/components/post-card'
 import type { Post } from '@/payload-types'
-import Link from 'next/link'
 
-type PostProps = Pick<Post, 'slug' | 'categories' | 'meta' | 'title' | 'id'>
+type PostProps = Pick<Post, 'slug' | 'meta' | 'title' | 'id'>
 
 export function PostsArchive({ posts }: { posts: PostProps[] }) {
   return (
-    <div className="mt-16">
-      <WidthWrapper>
-        <ul className="mx-auto max-w-md list-disc">
-          {posts.map((result) => (
-            <li key={result.id}>
-              <Link href={`/blog/${result.slug}` || ''}>{result.title}</Link>
-            </li>
-          ))}
-        </ul>
-      </WidthWrapper>
+    <div className="mt-8 grid w-full grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-4">
+      {posts.map((post) => {
+        return (
+          <PostCard
+            key={post.id}
+            title={post.title}
+            meta={post.meta}
+            slug={post.slug}
+          />
+        )
+      })}
     </div>
   )
 }

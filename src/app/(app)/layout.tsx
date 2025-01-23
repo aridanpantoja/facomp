@@ -49,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="h-full" suppressHydrationWarning>
+    <html lang="en" className="h-full w-full" suppressHydrationWarning>
       <body
         className={cn(
           'relative flex h-full w-full flex-col antialiased',
@@ -58,7 +58,7 @@ export default function RootLayout({
       >
         <Providers>
           <Navbar />
-          <main className="my-16 flex grow flex-col">{children}</main>
+          <main className="flex grow flex-col">{children}</main>
           <Footer />
         </Providers>
       </body>

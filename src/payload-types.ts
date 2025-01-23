@@ -75,7 +75,7 @@ export interface UserAuthOperations {
  */
 export interface Media {
   id: number;
-  alt?: string | null;
+  alt: string;
   caption?: {
     root: {
       type: string;
@@ -198,7 +198,7 @@ export interface Category {
 export interface Post {
   id: number;
   title: string;
-  heroImage?: (number | null) | Media;
+  heroImage: number | Media;
   content: {
     root: {
       type: string;
