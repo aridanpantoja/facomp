@@ -1,10 +1,10 @@
-import { badgeVariants } from '@/components/ui/badge'
+import { PostsArchive } from '@/components/posts-archive'
+import { SectionHeader } from '@/components/section-header/index'
 import { WidthWrapper } from '@/components/width-wrapper'
+import configPromise from '@payload-config'
 import { Book, ChevronRight, Newspaper, University } from 'lucide-react'
 import Link from 'next/link'
-import configPromise from '@payload-config'
 import { getPayload } from 'payload'
-import { PostsArchive } from '@/components/posts-archive'
 
 export default async function Home() {
   const payload = await getPayload({ config: configPromise })
@@ -49,34 +49,33 @@ export default async function Home() {
       <section>
         <WidthWrapper>
           <div className="relative mx-auto max-w-4xl">
-            <div className="text-balance text-center">
-              <Link
-                href="/calendarios"
-                className={badgeVariants({
-                  className:
-                    'group border-border px-4 py-1.5 text-xs hover:border-primary',
-                  variant: 'secondary',
-                })}
-              >
-                📆 Confira o calendário atual{' '}
-                <ChevronRight className="ml-1 size-3 group-hover:text-primary" />
+            <SectionHeader.Root>
+              <Link href="/calendarios">
+                <SectionHeader.Badge>
+                  📆 Confira o calendário atual{' '}
+                  <ChevronRight className="ml-1 size-3 group-hover:text-primary" />
+                </SectionHeader.Badge>
               </Link>
 
-              <h1 className="mb-4 mt-3 md:mb-6 md:mt-4 lg:text-6xl lg:leading-tight">
+              <SectionHeader.Title
+                mainTitle
+                className="mb-4 mt-3 md:mb-6 md:mt-4 lg:text-6xl lg:leading-tight"
+              >
                 Transformando o Futuro com{' '}
                 <span className="text-primary">Tecnologia e Inovação</span>
-              </h1>
-              <p className="text-muted-foreground">
+              </SectionHeader.Title>
+
+              <SectionHeader.Description>
                 Seja bem-vindo à{' '}
-                <span className="font-semibold text-foreground">
+                <span className="font-semibold text-primary">
                   Faculdade de Computação
                 </span>{' '}
                 do{' '}
-                <span className="font-semibold text-foreground">
+                <span className="font-semibold text-primary">
                   Campus Castanhal!
                 </span>
-              </p>
-            </div>
+              </SectionHeader.Description>
+            </SectionHeader.Root>
 
             <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
               {PEEKS.map((peek) => (
@@ -106,18 +105,13 @@ export default async function Home() {
       <section className="text-balance border-t bg-muted/50 text-center">
         <WidthWrapper>
           <div>
-            <div className="space-y-4">
-              <h2>Últimas notícias</h2>
-              <p className="text-muted-foreground">
-                <Link
-                  className="text-primary underline underline-offset-4"
-                  href="/noticias"
-                >
-                  Confira aqui
-                </Link>{' '}
-                todas as novidades da Faculdade de Computação
-              </p>
-            </div>
+            <SectionHeader.Root>
+              <SectionHeader.Title>Últimas notícias</SectionHeader.Title>
+              <SectionHeader.Description>
+                <Link href="/noticias">Confira aqui</Link> todas as novidades da
+                Faculdade de Computação
+              </SectionHeader.Description>
+            </SectionHeader.Root>
 
             <PostsArchive posts={posts.docs} />
           </div>
@@ -126,7 +120,9 @@ export default async function Home() {
 
       <section>
         <WidthWrapper>
-          <div></div>
+          <div className="grid grid-cols-2 gap-8">
+            <div></div>
+          </div>
         </WidthWrapper>
       </section>
     </>
