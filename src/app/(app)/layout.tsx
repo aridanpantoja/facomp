@@ -4,10 +4,10 @@ import { siteConfig } from '@/config'
 import { cn } from '@/lib/utils'
 import { Providers } from '@/providers'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Plus_Jakarta_Sans as Geist } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const geist = Geist({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  authors: [{ name: 'Name Lastname', url: 'https://yourportfolio.dev' }],
+  authors: [{ name: 'Aridan Pantoja', url: 'https://aridan.dev' }],
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
@@ -50,7 +50,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full w-full" suppressHydrationWarning>
-      <body className={cn('relative h-full antialiased', inter.className)}>
+      <body className={cn('relative h-full antialiased', geist.className)}>
         <Providers>
           <div className="flex min-h-screen w-full flex-col">
             <Navbar />

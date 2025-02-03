@@ -22,7 +22,7 @@ export async function LastNews() {
     },
   })
   return (
-    <section className="text-balance border-t bg-muted/50 text-center">
+    <section>
       <WidthWrapper>
         <div>
           <SectionHeader.Root>

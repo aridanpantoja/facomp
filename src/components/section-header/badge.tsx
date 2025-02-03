@@ -1,7 +1,7 @@
-import { Badge, BadgeProps } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
+import React from 'react'
 
-type SectionHeaderBadgeProps = {} & BadgeProps
+type SectionHeaderBadgeProps = React.HTMLAttributes<HTMLDivElement>
 
 export function SectionHeaderBadge({
   children,
@@ -9,15 +9,14 @@ export function SectionHeaderBadge({
   ...props
 }: SectionHeaderBadgeProps) {
   return (
-    <Badge
-      variant="secondary"
+    <div
       className={cn(
-        'group flex items-center justify-center gap-2 border-border px-4 py-1.5 text-xs hover:border-primary',
+        'default-border hover-border-animation group mb-3 flex h-9 items-center justify-center gap-2 rounded-md px-4 text-xs',
         className,
       )}
       {...props}
     >
       {children}
-    </Badge>
+    </div>
   )
 }

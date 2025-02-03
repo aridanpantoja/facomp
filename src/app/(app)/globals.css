@@ -86,16 +86,13 @@ body {
     @apply bg-background text-foreground;
   }
   section {
-    @apply py-16 [&:first-child]:lg:py-32 [&:first-child]:md:py-24 relative [&:first-child]:[background:radial-gradient(125%_125%_at_50%_10%,#FFFFFF_50%,#2563EB_150%)] [&:first-child]:dark:[background:radial-gradient(125%_125%_at_50%_10%,#020817_50%,#3B82F6_150%)]
+    @apply relative mb-24 
   }
   h1 {
-    @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl
+    @apply text-4xl font-extrabold tracking-tight lg:text-5xl
   }
   h2 {
-    @apply mt-10 scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0
-  }
-  h3 {
-    @apply scroll-m-20 text-2xl font-semibold tracking-tight first:mt-0
+    @apply text-3xl font-semibold tracking-tight 
   }
   blockquote {
     @apply mt-6 border-l-2 pl-6 italic
@@ -105,3 +102,11 @@ body {
   }
 }
 
+@layer components {
+  .default-border {
+    @apply border-[1px] border-b-[3px] border-foreground dark:border-secondary
+  }
+  .hover-border-animation {
+    @apply transition-all duration-75 hover:border-primary
+  }
+}
