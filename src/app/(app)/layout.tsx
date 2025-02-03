@@ -50,16 +50,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full w-full" suppressHydrationWarning>
-      <body
-        className={cn(
-          'relative flex h-full w-full flex-col antialiased',
-          inter.className,
-        )}
-      >
+      <body className={cn('relative h-full antialiased', inter.className)}>
         <Providers>
-          <Navbar />
-          <main className="flex grow flex-col">{children}</main>
-          <Footer />
+          <div className="flex min-h-screen w-full flex-col">
+            <Navbar />
+            <main className="flex grow flex-col">{children}</main>
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>

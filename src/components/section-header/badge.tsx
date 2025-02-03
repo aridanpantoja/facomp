@@ -12,7 +12,7 @@ export function SectionHeaderBadge({
     <Badge
       variant="secondary"
       className={cn(
-        'group border-border px-4 py-1.5 text-xs hover:border-primary',
+        'group flex items-center justify-center gap-2 border-border px-4 py-1.5 text-xs hover:border-primary',
         className,
       )}
       {...props}
