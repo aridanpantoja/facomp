@@ -86,7 +86,7 @@ body {
     @apply bg-background text-foreground;
   }
   section {
-    @apply relative [&:first-child]:mb-0 mb-16
+    @apply relative [&:first-child]:py-24 [&:first-child]:md:py-0 [&:first-child]:md:pb-24 [&:first-child]:md:pt-32 [&:first-child]:mb-0 mb-24
   }
   h1 {
     @apply text-4xl font-extrabold tracking-tight lg:text-5xl

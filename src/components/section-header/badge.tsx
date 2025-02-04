@@ -8,14 +8,11 @@ export function SectionHeaderBadge({
   className,
   ...props
 }: SectionHeaderBadgeProps) {
+  const defaultStyle =
+    'default-border group mb-3 flex h-9 items-center justify-center gap-2 rounded-md px-4 text-xs'
+
   return (
-    <div
-      className={cn(
-        'default-border hover-border-animation group mb-3 flex h-9 items-center justify-center gap-2 rounded-md px-4 text-xs',
-        className,
-      )}
-      {...props}
-    >
+    <div className={cn(defaultStyle, className)} {...props}>
       {children}
     </div>
   )

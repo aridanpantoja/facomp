@@ -1,3 +1,4 @@
+import { Icons } from '@/components/icons'
 import { SectionHeader } from '@/components/section-header'
 import {
   Accordion,
@@ -5,7 +6,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
+import { buttonVariants } from '@/components/ui/button'
 import { WidthWrapper } from '@/components/width-wrapper'
+import { siteConfig } from '@/config'
+import { Mail } from 'lucide-react'
+import Link from 'next/link'
 
 const FAQS = [
   {
@@ -40,17 +45,35 @@ export function FAQ() {
   return (
     <section>
       <WidthWrapper>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
-          <SectionHeader.Root className="items-start text-start">
-            <SectionHeader.Badge>Testando</SectionHeader.Badge>
-            <SectionHeader.Title>Perguntas Frequentes</SectionHeader.Title>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-6">
+          <div>
+            <SectionHeader.Root className="items-center md:items-start md:text-start">
+              <SectionHeader.Badge>🤔 FAQ</SectionHeader.Badge>
+              <SectionHeader.Title>Perguntas Frequentes</SectionHeader.Title>
 
-            <SectionHeader.Description>
-              Encontre as informações que você precisa sobre nossos cursos. Se
-              tiver mais dúvidas, sinta-se à vontade para entrar em contato
-              conosco!
-            </SectionHeader.Description>
-          </SectionHeader.Root>
+              <SectionHeader.Description>
+                Encontre as informações que você precisa sobre nossos cursos. Se
+                tiver mais dúvidas, sinta-se à vontade para entrar em contato
+                conosco!
+              </SectionHeader.Description>
+            </SectionHeader.Root>
+
+            <div className="mt-6 flex flex-wrap justify-center gap-2 md:justify-start">
+              <Link
+                href={siteConfig.links.github}
+                className={buttonVariants({ size: 'sm' })}
+              >
+                <Icons.Instagram className="fill-primary-foreground" />{' '}
+                facomp.ufpacastanhal
+              </Link>
+              <Link
+                href={siteConfig.links.github}
+                className={buttonVariants({ size: 'sm', variant: 'outline' })}
+              >
+                <Mail /> facompcastanhal@ufpa.br
+              </Link>
+            </div>
+          </div>
 
           <Accordion type="single" className="space-y-1" collapsible>
             {FAQS.map((question, i) => (

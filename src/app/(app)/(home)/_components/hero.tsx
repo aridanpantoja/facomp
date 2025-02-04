@@ -28,8 +28,7 @@ const SHORTCUTS = [
 
 export function Hero() {
   return (
-    <section className="flex items-center justify-center bg-gradient-to-br py-24 md:py-0 md:pb-24 md:pt-32">
-      <div className="absolute top-0 -z-10 h-screen w-full bg-[radial-gradient(100%_50%_at_50%_0%,rgba(37,99,235,0.25)_0,transparent_50%,transparent_100%)]"></div>
+    <section className="flex items-center justify-center bg-gradient-to-br">
       <WidthWrapper className="max-w-5xl">
         <SectionHeader.Root>
           <Link href="/404">

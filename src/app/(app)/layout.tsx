@@ -51,6 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full w-full" suppressHydrationWarning>
       <body className={cn('relative h-full antialiased', geist.className)}>
+        <div className="absolute top-0 -z-10 h-screen w-full bg-[radial-gradient(100%_50%_at_50%_0%,rgba(37,99,235,0.25)_0,transparent_50%,transparent_100%)]"></div>
         <Providers>
           <div className="flex min-h-screen w-full flex-col">
             <Navbar />

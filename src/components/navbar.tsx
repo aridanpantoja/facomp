@@ -9,16 +9,16 @@ import { siteConfig } from '@/config'
 
 export function Navbar() {
   return (
-    <header className="sticky inset-x-0 top-0 z-50 w-full border-b backdrop-blur supports-[backdrop-filter]:bg-background/50 md:fixed md:top-4 md:border-none md:bg-transparent md:backdrop-blur-none">
+    <header className="fixed inset-x-0 top-2 z-50 w-full md:top-4">
       <div>
         <WidthWrapper>
-          <div className="md:default-border flex h-[60px] items-center justify-between rounded-none bg-transparent px-0 py-4 shadow-none backdrop-blur md:rounded-full md:bg-background md:px-8 md:shadow-lg md:supports-[backdrop-filter]:bg-background/80">
+          <div className="default-border flex h-14 items-center justify-between rounded-full px-6 py-4 shadow-lg backdrop-blur supports-[backdrop-filter]:bg-background/60 md:h-[60px] md:bg-background md:px-8">
             <Link href="/" className="flex h-full w-fit items-center gap-2">
               <span className="font-bold">FACOMP</span>
             </Link>
 
             <div className="flex h-full items-center">
-              <nav className="hidden sm:block">
+              <nav className="hidden md:block">
                 <ul className="flex gap-6 text-sm font-medium">
                   {siteConfig.mainNav.map((link) => (
                     <li
@@ -32,7 +32,7 @@ export function Navbar() {
               </nav>
 
               <Separator
-                className="ml-6 mr-4 hidden h-full sm:block"
+                className="ml-6 mr-4 hidden h-full md:block"
                 orientation="vertical"
               />
 
@@ -41,7 +41,7 @@ export function Navbar() {
                   <Search />
                 </Button>
 
-                <ModeToggle className="hidden sm:flex" />
+                <ModeToggle className="hidden md:flex" />
                 <MobileNav />
               </div>
             </div>
