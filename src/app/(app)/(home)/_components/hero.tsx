@@ -1,8 +1,9 @@
+import { Marker } from '@/components/marker'
 import { SectionHeader } from '@/components/section-header'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { WidthWrapper } from '@/components/width-wrapper'
-import { Book, Newspaper, University } from 'lucide-react'
+import { Book, Newspaper, Star, University } from 'lucide-react'
 import Link from 'next/link'
-import { ScrollIndicator } from './scroll-indicator'
 
 const SHORTCUTS = [
   {
@@ -27,7 +28,8 @@ const SHORTCUTS = [
 
 export function Hero() {
   return (
-    <section className="flex items-center justify-center bg-gradient-to-br pb-28 pt-16 md:min-h-screen md:py-0">
+    <section className="flex items-center justify-center bg-gradient-to-br py-24 md:py-0 md:pb-24 md:pt-32">
+      <div className="absolute top-0 -z-10 h-screen w-full bg-[radial-gradient(100%_50%_at_50%_0%,rgba(37,99,235,0.25)_0,transparent_50%,transparent_100%)]"></div>
       <WidthWrapper className="max-w-5xl">
         <SectionHeader.Root>
           <Link href="/404">
@@ -40,8 +42,12 @@ export function Hero() {
             mainTitle
             className="mb-4 md:mb-6 lg:text-6xl lg:leading-tight"
           >
-            Transformando o Futuro com{' '}
-            <span className="text-primary">Tecnologia e Inovação</span>
+            Transformando o{' '}
+            <span className="relative mx-1">
+              <Marker />
+              Futuro
+            </span>{' '}
+            com Tecnologia e Inovação
           </SectionHeader.Title>
 
           <SectionHeader.Description>
@@ -49,9 +55,9 @@ export function Hero() {
             <span className="font-semibold text-primary">
               Faculdade de Computação
             </span>{' '}
-            do{' '}
+            da{' '}
             <span className="font-semibold text-primary">
-              Campus Castanhal!
+              UFPA Campus Castanhal!
             </span>
           </SectionHeader.Description>
         </SectionHeader.Root>
@@ -61,10 +67,12 @@ export function Hero() {
             <Link
               href={peek.href}
               key={peek.title}
-              className="default-border hover-border-animation group relative h-20 rounded-md px-4 pr-12 sm:h-28 md:px-6 md:pr-14"
+              className="default-border hover-border-animation group relative rounded-md p-4 pr-12 md:p-6 md:pr-14"
             >
               <div className="flex h-full flex-col items-start justify-center gap-2">
-                <span className="font-semibold">{peek.title}</span>
+                <span className="font-semibold transition-colors group-hover:text-primary">
+                  {peek.title}
+                </span>
                 <p className="text-xs text-muted-foreground">
                   {peek.description}
                 </p>
@@ -73,9 +81,36 @@ export function Hero() {
             </Link>
           ))}
         </div>
-      </WidthWrapper>
 
-      <ScrollIndicator />
+        <div className="mt-12 flex items-center justify-center gap-2">
+          <div className="relative flex gap-2">
+            <Avatar className="">
+              <AvatarFallback>SH</AvatarFallback>
+              <AvatarImage src="/shadcn.jpg" />
+            </Avatar>
+            <Avatar className="absolute right-1/2 translate-x-1/2">
+              <AvatarFallback>AP</AvatarFallback>
+              <AvatarImage src="/profile.webp" />
+            </Avatar>
+            <Avatar className="">
+              <AvatarFallback>KW</AvatarFallback>
+              <AvatarImage src="/karol-wojtyla.webp" />
+            </Avatar>
+          </div>
+          <div className="space-y-1">
+            <div className="flex items-center gap-0.5">
+              {Array.from({ length: 3 }).map((_, i) => (
+                <Star key={i} className="size-3 fill-primary text-primary" />
+              ))}
+            </div>
+            <p className="text-sm font-bold text-muted-foreground">
+              +800 alunos
+            </p>
+          </div>
+        </div>
+      </WidthWrapper>
+      {/* 
+      <ScrollIndicator /> */}
     </section>
   )
 }

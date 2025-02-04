@@ -5,14 +5,19 @@ import { motion } from 'motion/react'
 export function ScrollIndicator() {
   return (
     <div className="absolute inset-x-0 bottom-0 flex flex-col items-center justify-center gap-1 md:bottom-8">
-      <div className="h-7 w-1 overflow-hidden rounded-full bg-muted-foreground/30">
+      <div className="flex h-7 w-4 items-center justify-center overflow-hidden rounded-full border-2 border-primary">
         <motion.div
-          animate={{ y: [0, 16, 0] }}
-          transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
-          className="h-3 w-full rounded-full bg-primary"
+          animate={{ y: [-5, -8, 8], opacity: [0, 1, 1, 0] }}
+          transition={{
+            repeat: Infinity,
+            duration: 3.5,
+            repeatDelay: 0.5,
+            times: [0, 0.5, 0.8, 1],
+            ease: 'anticipate',
+          }}
+          className="size-1 shrink-0 rounded-full bg-primary"
         ></motion.div>
       </div>
-      <span className="text-[10px] font-semibold">SCROLL</span>
     </div>
   )
 }

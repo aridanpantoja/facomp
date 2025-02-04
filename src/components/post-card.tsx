@@ -10,7 +10,7 @@ export function PostCard({ title, meta, slug }: PostCardProps) {
   return (
     <Link
       href={`/noticias/${slug}`}
-      className="gradient-card group flex w-full flex-col overflow-hidden rounded-lg text-start"
+      className="gradient-card default-border hover-border-animation group flex w-full flex-col overflow-hidden rounded-lg text-start"
     >
       <div className="relative w-full">
         {meta?.image && typeof meta?.image !== 'string' && (
