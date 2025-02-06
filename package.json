@@ -17,6 +17,7 @@
     "@payloadcms/next": "^3.17.1",
     "@payloadcms/plugin-seo": "^3.17.1",
     "@payloadcms/richtext-lexical": "^3.17.1",
+    "@payloadcms/storage-s3": "^3.17.1",
     "@payloadcms/ui": "^3.17.1",
     "@radix-ui/react-accordion": "^1.2.2",
     "@radix-ui/react-avatar": "^1.1.2",
@@ -41,7 +42,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@types/node": "^20",
+    "@types/node": "^20.17.17",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
