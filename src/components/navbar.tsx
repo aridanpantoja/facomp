@@ -1,11 +1,11 @@
 import { ModeToggle } from '@/components/theme/mode-toggle'
-import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { WidthWrapper } from '@/components/width-wrapper'
+import { siteConfig } from '@/config'
 import { Search } from 'lucide-react'
 import Link from 'next/link'
 import { MobileNav } from './mobile-nav'
-import { siteConfig } from '@/config'
 
 export function Navbar() {
   return (
@@ -37,9 +37,12 @@ export function Navbar() {
               />
 
               <div className="flex gap-1">
-                <Button size="icon" variant="ghost">
+                <Link
+                  href="/search"
+                  className={buttonVariants({ size: 'icon', variant: 'ghost' })}
+                >
                   <Search />
-                </Button>
+                </Link>
 
                 <ModeToggle className="hidden md:flex" />
                 <MobileNav />

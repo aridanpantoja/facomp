@@ -1,7 +1,7 @@
 import { PostCard } from '@/components/post-card'
 import type { Post } from '@/payload-types'
 
-type PostProps = Pick<Post, 'slug' | 'meta' | 'title' | 'id'>
+export type PostProps = Pick<Post, 'slug' | 'meta' | 'title' | 'id'>
 
 export function PostsArchive({ posts }: { posts: PostProps[] }) {
   return (
