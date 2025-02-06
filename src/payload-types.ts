@@ -15,6 +15,7 @@ export interface Config {
     users: User;
     categories: Category;
     posts: Post;
+    search: Search;
     'payload-jobs': PayloadJob;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -26,6 +27,7 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
+    search: SearchSelect<false> | SearchSelect<true>;
     'payload-jobs': PayloadJobsSelect<false> | PayloadJobsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -91,7 +93,6 @@ export interface Media {
     };
     [k: string]: unknown;
   } | null;
-  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -240,6 +241,36 @@ export interface Post {
   _status?: ('draft' | 'published') | null;
 }
 /**
+ * This is a collection of automatically created search results. These results are used by the global site search and will be updated automatically as documents in the CMS are created or updated.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "search".
+ */
+export interface Search {
+  id: number;
+  title?: string | null;
+  priority?: number | null;
+  doc: {
+    relationTo: 'posts';
+    value: number | Post;
+  };
+  slug?: string | null;
+  meta?: {
+    title?: string | null;
+    description?: string | null;
+    image?: (number | null) | Media;
+  };
+  categories?:
+    | {
+        relationTo?: string | null;
+        id?: string | null;
+        title?: string | null;
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-jobs".
  */
@@ -355,6 +386,10 @@ export interface PayloadLockedDocument {
         value: number | Post;
       } | null)
     | ({
+        relationTo: 'search';
+        value: number | Search;
+      } | null)
+    | ({
         relationTo: 'payload-jobs';
         value: number | PayloadJob;
       } | null);
@@ -407,7 +442,6 @@ export interface PayloadMigration {
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
   caption?: T;
-  prefix?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -551,6 +585,32 @@ export interface PostsSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "search_select".
+ */
+export interface SearchSelect<T extends boolean = true> {
+  title?: T;
+  priority?: T;
+  doc?: T;
+  slug?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+      };
+  categories?:
+    | T
+    | {
+        relationTo?: T;
+        id?: T;
+        title?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

@@ -2,9 +2,12 @@ import { seoPlugin } from '@payloadcms/plugin-seo'
 import { GenerateTitle, GenerateURL } from '@payloadcms/plugin-seo/types'
 import { Plugin } from 'payload'
 import { s3Storage } from '@payloadcms/storage-s3'
+import { searchPlugin } from '@payloadcms/plugin-search'
 
 import { Post } from '@/payload-types'
 import { getServerSideURL } from '@/lib/utils'
+import { beforeSyncWithSearch } from '@/search/beforeSync'
+import { searchFields } from '@/search/fieldOverrides'
 
 const generateTitle: GenerateTitle<Post> = ({ doc }) => {
   return doc?.title
@@ -23,11 +26,19 @@ export const plugins: Plugin[] = [
     generateTitle,
     generateURL,
   }),
+  searchPlugin({
+    collections: ['posts'],
+    beforeSync: beforeSyncWithSearch,
+    searchOverrides: {
+      fields: ({ defaultFields }) => {
+        return [...defaultFields, ...searchFields]
+      },
+    },
+  }),
   s3Storage({
     collections: {
       media: {
         disableLocalStorage: true,
-        prefix: 'media',
       },
     },
     bucket: process.env.R2_BUCKET_NAME as string,
