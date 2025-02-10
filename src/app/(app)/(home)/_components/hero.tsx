@@ -1,6 +1,7 @@
 import { Marker } from '@/components/marker'
 import { SectionHeader } from '@/components/section-header'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { buttonVariants } from '@/components/ui/button'
 import { WidthWrapper } from '@/components/width-wrapper'
 import { Book, Newspaper, Star, University } from 'lucide-react'
 import Link from 'next/link'
@@ -31,10 +32,11 @@ export function Hero() {
     <section className="flex items-center justify-center bg-gradient-to-br">
       <WidthWrapper className="max-w-5xl">
         <SectionHeader.Root>
-          <Link href="/404">
-            <SectionHeader.Badge>
-              📝 Avaliar experiência no site
-            </SectionHeader.Badge>
+          <Link
+            href="/404"
+            className={buttonVariants({ className: 'mb-3', size: 'sm' })}
+          >
+            📝 Avaliar experiência no site
           </Link>
 
           <SectionHeader.Title
