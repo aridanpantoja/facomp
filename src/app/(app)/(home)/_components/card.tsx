@@ -24,7 +24,7 @@ export function Card({
       href={href}
       {...props}
       className={cn(
-        'default-border flex flex-col items-center justify-center gap-3 rounded-3xl p-8 text-center',
+        'default-border flex flex-col items-center justify-center gap-3 rounded-3xl bg-background p-8 text-center transition-colors hover:bg-accent hover:text-accent-foreground',
         className,
       )}
     >
@@ -33,7 +33,7 @@ export function Card({
         alt={imageAlt}
         width={512}
         height={512}
-        className="size-24"
+        className="size-16"
       />
       <h3 className="text-xl font-bold">{title}</h3>
       <p className="text-sm text-muted-foreground">{description}</p>

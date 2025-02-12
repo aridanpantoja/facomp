@@ -6,50 +6,50 @@ const ITEMS = [
   {
     title: 'Engenharia de Computação',
     description:
-      'Explore conteúdos completos sobre Engenharia de Computação, incluindo conceitos, tendências e oportunidades na área.',
-    imageSrc: '/emojis/robot.gif',
+      'Conheça a estrutura do curso, disciplinas, áreas de atuação e oportunidades na área de computação.',
+    imageSrc: '/emojis/gear.gif',
     imageAlt: 'Emoji animado de um robô',
     href: '/cursos/engenharia',
-    className: 'row-span-2',
+    className: 'lg:row-span-2',
   },
   {
     title: 'Professores',
     description:
-      'Explore conteúdos completos sobre Engenharia de Computação, incluindo conceitos, tendências e oportunidades na área.',
-    imageSrc: '/emojis/robot.gif',
+      'Informações sobre o corpo docente, áreas de pesquisa e contatos dos professores.',
+    imageSrc: '/emojis/graduation-cap.gif',
     imageAlt: 'Emoji animado de um robô',
     href: '/cursos/engenharia',
   },
   {
-    title: 'Engenharia de Computação',
+    title: 'Sistemas de Informação',
     description:
-      'Explore conteúdos completos sobre Engenharia de Computação, incluindo conceitos, tendências e oportunidades na área.',
-    imageSrc: '/emojis/robot.gif',
+      'Explore a integração entre tecnologia e negócios, com foco em desenvolvimento de sistemas e gestão de dados.',
+    imageSrc: '/emojis/light-bulb.gif',
     imageAlt: 'Emoji animado de um robô',
     href: '/cursos/engenharia',
-    className: 'row-span-2',
+    className: 'lg:row-span-2',
   },
   {
-    title: 'Engenharia de Computação',
+    title: 'Estágio',
     description:
-      'Explore conteúdos completos sobre Engenharia de Computação, incluindo conceitos, tendências e oportunidades na área.',
-    imageSrc: '/emojis/robot.gif',
+      'Orientações, vagas disponíveis e requisitos para estágios na área de computação.',
+    imageSrc: '/emojis/nerd.gif',
     imageAlt: 'Emoji animado de um robô',
     href: '/cursos/engenharia',
-    className: 'row-span-2',
+    className: 'lg:row-span-2',
   },
   {
-    title: 'Engenharia de Computação',
+    title: 'Calendários',
     description:
-      'Explore conteúdos completos sobre Engenharia de Computação, incluindo conceitos, tendências e oportunidades na área.',
-    imageSrc: '/emojis/robot.gif',
+      'Acompanhe datas importantes, prazos de matrícula e eventos acadêmicos.',
+    imageSrc: '/emojis/clock.gif',
     imageAlt: 'Emoji animado de um robô',
     href: '/cursos/engenharia',
   },
   {
-    title: 'Engenharia de Computação',
+    title: 'Laboratórios',
     description:
-      'Explore conteúdos completos sobre Engenharia de Computação, incluindo conceitos, tendências e oportunidades na área.',
+      'Conheça os laboratórios e equipamentos disponíveis na FACOMP.',
     imageSrc: '/emojis/robot.gif',
     imageAlt: 'Emoji animado de um robô',
     href: '/cursos/engenharia',
@@ -58,7 +58,7 @@ const ITEMS = [
 
 export function Courses() {
   return (
-    <section>
+    <section className="md:pb-24">
       <WidthWrapper className="max-w-5xl">
         <div className="w-full space-y-8">
           <SectionHeader.Root>
@@ -68,15 +68,18 @@ export function Courses() {
             </SectionHeader.Description>
           </SectionHeader.Root>
 
-          <div className="grid w-full grid-cols-2 grid-rows-3 gap-4 lg:grid-cols-3">
-            <Card
-              title="Engenharia de Computação"
-              description="Saiba tudo relacionado ao curso de Engenharia"
-              imageSrc="/emojis/robot.gif"
-              imageAlt="Emoji animado de um robô"
-              href="/cursos/engenharia"
-              className="row-span-2"
-            />
+          <div className="grid w-full grid-cols-1 grid-rows-2 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-3">
+            {ITEMS.map((item, i) => (
+              <Card
+                title={item.title}
+                description={item.description}
+                imageSrc={item.imageSrc}
+                imageAlt={item.imageAlt}
+                href={item.href}
+                className={item.className}
+                key={i}
+              />
+            ))}
           </div>
         </div>
       </WidthWrapper>
