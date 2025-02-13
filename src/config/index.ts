@@ -16,85 +16,86 @@ const createSiteConfig = () => {
       label: 'Estágio',
       href: '/estagio',
     },
-    {
-      label: 'Projetos',
-      href: '/projetos',
-    },
   ]
 
   const footerNav = [
     {
-      title: 'Tools',
+      title: 'Páginas',
       links: [
         {
-          label: 'Desktop apps',
-          href: '/blog',
+          label: 'Sobre',
+          href: '/sobre',
         },
         {
-          label: 'Figma to Framer',
-          href: '/blog',
+          label: 'Notícias',
+          href: '/noticias',
         },
         {
-          label: 'Desktop apps',
-          href: '/blog',
+          label: 'Documentos',
+          href: '/documentos',
         },
         {
-          label: 'Desktop apps',
-          href: '/blog',
-        },
-        {
-          label: 'Desktop apps',
-          href: '/blog',
+          label: 'Estágio',
+          href: '/estagio',
         },
       ],
     },
     {
-      title: 'Company',
+      title: 'Atalhos',
       links: [
         {
-          label: 'Desktop apps',
-          href: '/blog',
+          label: 'Docentes',
+          href: '/sobre#professores',
         },
         {
-          label: 'Desktop apps',
-          href: '/blog',
+          label: 'Calendários',
+          href: '/noticas?filter=calendarios',
         },
         {
-          label: 'Desktop apps',
-          href: '/blog',
+          label: 'Bolsas',
+          href: '/noticas?filter=bolsas',
         },
         {
-          label: 'Desktop apps',
-          href: '/blog',
-        },
-        {
-          label: 'Desktop apps',
-          href: '/blog',
+          label: 'Eventos',
+          href: '/noticas?filter=eventos',
         },
       ],
     },
     {
-      title: 'Compare',
+      title: 'Comunidade',
       links: [
         {
-          label: 'Desktop apps',
-          href: '/blog',
+          label: 'Link Júnior',
+          href: '/sobre/sistemas',
         },
         {
-          label: 'Desktop apps',
-          href: '/blog',
+          label: 'RECOMP',
+          href: '/sobre/engenharia',
         },
         {
-          label: 'Desktop apps',
-          href: '/blog',
+          label: 'CASI',
+          href: '/sobre/sistemas',
         },
         {
-          label: 'Desktop apps',
-          href: '/blog',
+          label: 'DAEX',
+          href: '/sobre/sistemas',
+        },
+      ],
+    },
+    {
+      title: 'Contato',
+      links: [
+        {
+          label: 'Facebook',
+          href: '/sobre/sistemas',
         },
         {
-          label: 'Desktop apps',
-          href: '/blog',
+          label: 'Instagram',
+          href: '/sobre/sistemas',
+        },
+        {
+          label: 'Discord',
+          href: '/sobre/sistemas',
         },
       ],
     },

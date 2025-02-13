@@ -107,6 +107,6 @@ body {
     @apply border-[1px] border-b-[3px] border-foreground dark:border-secondary bg-background
   }
   .hover-border-animation {
-    @apply transition-all duration-75 hover:border-primary
+    @apply transition-colors hover:bg-accent hover:text-accent-foreground
   }
 }
