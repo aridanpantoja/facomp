@@ -12,7 +12,7 @@ export function Navbar() {
     <header className="fixed inset-x-0 top-2 z-50 w-full md:top-4">
       <div>
         <WidthWrapper>
-          <div className="default-border flex h-14 items-center justify-between rounded-full px-6 py-4 shadow-lg backdrop-blur supports-[backdrop-filter]:bg-background/60 md:h-[60px] md:bg-background md:px-8">
+          <div className="default-border flex h-14 items-center justify-between rounded-full bg-background px-6 py-4 shadow-lg backdrop-blur supports-[backdrop-filter]:bg-background/60 md:h-[60px] md:px-8">
             <Link href="/" className="flex h-full w-fit items-center gap-2">
               <span className="font-bold">FACOMP</span>
             </Link>
