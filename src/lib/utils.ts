@@ -33,7 +33,7 @@ export const getClientSideURL = () => {
     return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
   }
 
-  return process.env.NEXT_PUBLIC_SERVER_URL || ''
+  return process.env.NEXT_PUBLIC_SERVER_URL || 'https://facomp.vercel.app'
 }
 
 export function useDebounce<T>(value: T, delay = 200): T {
