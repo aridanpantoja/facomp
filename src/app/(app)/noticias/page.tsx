@@ -1,4 +1,5 @@
 import { PostsArchive } from '@/components/posts-archive'
+import { SectionHeader } from '@/components/section-header/index'
 import { WidthWrapper } from '@/components/width-wrapper'
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
@@ -23,19 +24,24 @@ export default async function BlogPage() {
     <>
       <section>
         <WidthWrapper>
-          <div className="mx-auto w-full max-w-3xl items-center space-y-4 text-balance text-center md:space-y-6">
-            <h1>Notícias</h1>
-            <p className="text-muted-foreground">
+          <SectionHeader.Root>
+            <SectionHeader.Title mainTitle>Notícias</SectionHeader.Title>
+            <SectionHeader.Description>
               Confira todas as oportunidades, notícias e mais sobre da Faculdade
               de Computação
-            </p>
-          </div>
+            </SectionHeader.Description>
+          </SectionHeader.Root>
         </WidthWrapper>
       </section>
 
       <section className="bg-muted/50">
         <WidthWrapper>
-          <PostsArchive posts={posts.docs} />
+          {posts.docs.length > 0 ? (
+            <PostsArchive posts={posts.docs} />
+          ) : (
+            <p>Not Found</p>
+            // TO-DO: NOT FOUND COMPONENTE FOR POSTS
+          )}
         </WidthWrapper>
       </section>
     </>

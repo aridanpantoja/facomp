@@ -1,24 +1,24 @@
 import { ModeToggle } from '@/components/theme/mode-toggle'
-import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { WidthWrapper } from '@/components/width-wrapper'
+import { siteConfig } from '@/config'
 import { Search } from 'lucide-react'
 import Link from 'next/link'
 import { MobileNav } from './mobile-nav'
-import { siteConfig } from '@/config'
 
 export function Navbar() {
   return (
-    <header className="sticky inset-x-0 top-0 z-50 w-full border-b backdrop-blur supports-[backdrop-filter]:bg-background/80">
-      <WidthWrapper>
-        <div>
-          <div className="flex h-[60px] items-center justify-between py-4">
+    <header className="fixed inset-x-0 top-2 z-50 w-full md:top-4">
+      <div>
+        <WidthWrapper>
+          <div className="default-border flex h-14 items-center justify-between rounded-full bg-background px-6 py-4 shadow-lg backdrop-blur supports-[backdrop-filter]:bg-background/60 md:h-[60px] md:px-8">
             <Link href="/" className="flex h-full w-fit items-center gap-2">
               <span className="font-bold">FACOMP</span>
             </Link>
 
             <div className="flex h-full items-center">
-              <nav className="hidden sm:block">
+              <nav className="hidden md:block">
                 <ul className="flex gap-6 text-sm font-medium">
                   {siteConfig.mainNav.map((link) => (
                     <li
@@ -32,22 +32,25 @@ export function Navbar() {
               </nav>
 
               <Separator
-                className="ml-6 mr-4 hidden h-full sm:block"
+                className="ml-6 mr-4 hidden h-full md:block"
                 orientation="vertical"
               />
 
               <div className="flex gap-1">
-                <Button size="icon" variant="ghost">
+                <Link
+                  href="/search"
+                  className={buttonVariants({ size: 'icon', variant: 'ghost' })}
+                >
                   <Search />
-                </Button>
+                </Link>
 
-                <ModeToggle className="hidden sm:flex" />
+                <ModeToggle className="hidden md:flex" />
                 <MobileNav />
               </div>
             </div>
           </div>
-        </div>
-      </WidthWrapper>
+        </WidthWrapper>
+      </div>
     </header>
   )
 }

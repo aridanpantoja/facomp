@@ -23,11 +23,11 @@ export function MobileNav() {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button size="icon" variant="ghost" className="flex sm:hidden">
+        <Button size="icon" variant="ghost" className="flex md:hidden">
           <AlignRight />
         </Button>
       </DialogTrigger>
-      <DialogContent className="block max-w-64 rounded-md sm:hidden">
+      <DialogContent className="block max-w-64 rounded-md md:hidden">
         <DialogHeader className="hidden">
           <DialogTitle>Are you absolutely sure?</DialogTitle>
           <DialogDescription>

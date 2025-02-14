@@ -4,6 +4,7 @@ import { Posts } from '@/collections/Posts'
 import { Users } from '@/collections/Users'
 import { plugins } from '@/plugins'
 import { postgresAdapter } from '@payloadcms/db-postgres'
+import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import path from 'path'
 import { buildConfig } from 'payload'
@@ -42,6 +43,18 @@ export default buildConfig({
       ],
     },
   },
+  email: nodemailerAdapter({
+    defaultFromAddress: 'aridanpantoja@gmail.com',
+    defaultFromName: 'FACOMP',
+    transportOptions: {
+      host: process.env.SMTP_HOST,
+      port: 587,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    },
+  }),
   editor: lexicalEditor(),
   collections: [Media, Users, Categories, Posts],
   plugins: [...plugins],

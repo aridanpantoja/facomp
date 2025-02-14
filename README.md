@@ -17,6 +17,10 @@
 ```env
 DATABASE_URI="postgresql://docker:docker@localhost:5432/mydb?schema=public"
 PAYLOAD_SECRET="YOUR_SECRET_HERE"
+R2_ENDPOINT="YOUR_ENDPOINT_HERE"
+R2_BUCKET_NAME="YOUR_BUCKET_NAME_HERE"
+R2_ACCESS_KEY_ID="YOUR_KEY_HERE"
+R2_SECRET_ACCESS_KEY="YOUR_SECRET_KEY_HERE"
 ```
 
 #### 3. Install required dependencies with pnpm
