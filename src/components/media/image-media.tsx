@@ -1,6 +1,6 @@
 'use client'
 
-import type { StaticImageData } from 'next/image'
+import type { ImageLoader, ImageLoaderProps, StaticImageData } from 'next/image'
 
 import { cn } from '@/lib/utils'
 import NextImage from 'next/image'
@@ -33,6 +33,13 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
   let height: number | undefined
   let alt = altFromProps
   let src: StaticImageData | string = srcFromProps || ''
+
+  const contentfulImageLoader: ImageLoader = ({
+    src,
+    width,
+  }: ImageLoaderProps) => {
+    return `${src}?w=${width}`
+  }
 
   if (!src && resource && typeof resource === 'object') {
     const {
@@ -74,6 +81,7 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
         loading={loading}
         sizes={sizes}
         src={src}
+        loader={contentfulImageLoader}
         width={!fill ? width : undefined}
       />
     </picture>
