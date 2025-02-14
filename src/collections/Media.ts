@@ -26,7 +26,6 @@ export const Media: CollectionConfig = {
     {
       name: 'alt',
       type: 'text',
-      required: true,
     },
     {
       name: 'caption',
@@ -43,6 +42,7 @@ export const Media: CollectionConfig = {
     },
   ],
   upload: {
+    mimeTypes: ['image/*', 'application/pdf'],
     staticDir: path.resolve(dirname, '../../public/media'),
     adminThumbnail: 'thumbnail',
     focalPoint: true,
