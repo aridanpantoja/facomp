@@ -12,6 +12,11 @@ export default async function BlogPage() {
     depth: 1,
     limit: 12,
     overrideAccess: false,
+    where: {
+      categories: {
+        contains: 1,
+      },
+    },
     select: {
       title: true,
       slug: true,
@@ -34,7 +39,7 @@ export default async function BlogPage() {
         </WidthWrapper>
       </section>
 
-      <section className="bg-muted/50">
+      <section>
         <WidthWrapper>
           {posts.docs.length > 0 ? (
             <PostsArchive posts={posts.docs} />

@@ -13,6 +13,11 @@ export async function generateStaticParams() {
     collection: 'posts',
     draft: false,
     limit: 1000,
+    where: {
+      categories: {
+        contains: 1,
+      },
+    },
     overrideAccess: false,
     pagination: false,
     select: {

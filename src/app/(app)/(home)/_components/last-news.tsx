@@ -13,6 +13,11 @@ export async function LastNews() {
     depth: 1,
     page: 1,
     limit: 4,
+    where: {
+      categories: {
+        contains: 1,
+      },
+    },
     overrideAccess: false,
     select: {
       title: true,
@@ -25,7 +30,7 @@ export async function LastNews() {
     <section>
       <WidthWrapper>
         <div>
-          <SectionHeader.Root>
+          <SectionHeader.Root className="mb-8">
             <SectionHeader.Title>Últimas notícias</SectionHeader.Title>
             <SectionHeader.Description>
               <Link href="/noticias">Confira aqui</Link> todas as novidades da
