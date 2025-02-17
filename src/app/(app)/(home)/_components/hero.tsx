@@ -85,17 +85,20 @@ export function Hero() {
 
         <div className="mt-12 flex items-center justify-center gap-2">
           <div className="relative flex gap-2">
-            <Avatar className="">
+            <Avatar>
               <AvatarFallback>SH</AvatarFallback>
-              <AvatarImage src="/shadcn.jpg" />
+              <AvatarImage src="/shadcn.jpg" alt="Foto de Shadcn" />
             </Avatar>
             <Avatar className="absolute right-1/2 translate-x-1/2">
-              <AvatarFallback>AP</AvatarFallback>
-              <AvatarImage src="/profile.webp" />
-            </Avatar>
-            <Avatar className="">
               <AvatarFallback>KW</AvatarFallback>
-              <AvatarImage src="/karol-wojtyla.webp" />
+              <AvatarImage
+                src="/karol-wojtyla.webp"
+                alt="Foto de Karol Wojtyla"
+              />
+            </Avatar>
+            <Avatar>
+              <AvatarFallback>AP</AvatarFallback>
+              <AvatarImage src="/profile.webp" alt="Foto de Aridan Pantoja" />
             </Avatar>
           </div>
           <div className="space-y-1">

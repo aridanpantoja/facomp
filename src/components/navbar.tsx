@@ -40,6 +40,7 @@ export function Navbar() {
                 <Link
                   href="/search"
                   className={buttonVariants({ size: 'icon', variant: 'ghost' })}
+                  aria-label="Pesquisar"
                 >
                   <Search />
                 </Link>

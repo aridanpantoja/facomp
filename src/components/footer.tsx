@@ -49,7 +49,7 @@ export function Footer() {
                     className="flex flex-col items-start gap-2.5 text-sm leading-[1.4em]"
                     key={i}
                   >
-                    <h6 className="font-semibold">{tab.title}</h6>
+                    <span className="font-semibold">{tab.title}</span>
 
                     {tab.links.map((link, i) => (
                       <Link
