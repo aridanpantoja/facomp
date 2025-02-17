@@ -1,4 +1,6 @@
 const createSiteConfig = () => {
+  const url = 'https://facomp.vercel.app'
+
   const mainNav = [
     {
       label: 'Sobre',
@@ -106,13 +108,13 @@ const createSiteConfig = () => {
   }
 
   return {
-    name: 'Website Name',
-    url: 'https://leaf.com.br',
-    description: 'Description of your website',
-    ogImage: 'https://leaf.com.br/og.jpg',
+    name: 'Facomp Castanhal',
+    description: 'Site da Faculdade de Computação',
+    ogImage: `${url}/og.jpg`,
     links,
     mainNav,
     footerNav,
+    url,
   }
 }
 

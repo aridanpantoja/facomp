@@ -2,7 +2,14 @@ import { PostsArchive } from '@/components/posts-archive'
 import { SectionHeader } from '@/components/section-header/index'
 import { WidthWrapper } from '@/components/width-wrapper'
 import configPromise from '@payload-config'
+import { Metadata } from 'next'
 import { getPayload } from 'payload'
+
+export const metadata: Metadata = {
+  title: 'Notícias',
+  description:
+    'Confira todas as oportunidades, notícias e mais sobre da Faculdade de Computação',
+}
 
 export default async function BlogPage() {
   const payload = await getPayload({ config: configPromise })
