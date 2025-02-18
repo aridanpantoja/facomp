@@ -1,8 +1,8 @@
-import { SectionHeader } from '@/components/section-header'
-import { WidthWrapper } from '@/components/width-wrapper'
-import { Teachers } from './_components/teachers'
-import { Labs } from './_components/labs'
 import { Metadata } from 'next'
+import { Labs } from '@/app/(app)/sobre/_components/labs'
+import { Teachers } from '@/app/(app)/sobre/_components/teachers'
+import { Hero } from '@/app/(app)/sobre/_components/hero'
+import { About } from './_components/about'
 
 export const metadata: Metadata = {
   title: 'Sobre',
@@ -13,17 +13,8 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section>
-        <WidthWrapper>
-          <SectionHeader.Root>
-            <SectionHeader.Title mainTitle>Sobre</SectionHeader.Title>
-            <SectionHeader.Description>
-              Saiba tudo sobre a Faculdade de Computação Campus Castanhal
-            </SectionHeader.Description>
-          </SectionHeader.Root>
-        </WidthWrapper>
-      </section>
-
+      <Hero />
+      <About />
       <Labs />
       <Teachers />
     </>

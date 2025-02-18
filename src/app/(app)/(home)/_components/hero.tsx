@@ -1,5 +1,6 @@
 import { Marker } from '@/components/marker'
 import { SectionHeader } from '@/components/section-header'
+import { Shortcuts } from '@/components/shortcuts'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { buttonVariants } from '@/components/ui/button'
 import { WidthWrapper } from '@/components/width-wrapper'
@@ -31,7 +32,7 @@ export function Hero() {
   return (
     <section className="flex items-center justify-center bg-gradient-to-br">
       <WidthWrapper className="max-w-5xl">
-        <SectionHeader.Root>
+        <SectionHeader.Root className="mb-8 lg:mb-12">
           <Link
             href="/404"
             className={buttonVariants({ className: 'mb-3', size: 'sm' })}
@@ -63,25 +64,7 @@ export function Hero() {
           </SectionHeader.Description>
         </SectionHeader.Root>
 
-        <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:mt-12 lg:grid-cols-3">
-          {SHORTCUTS.map((peek) => (
-            <Link
-              href={peek.href}
-              key={peek.title}
-              className="default-border hover-border-animation relative rounded-md p-4 pr-12 md:p-6 md:pr-14"
-            >
-              <div className="flex h-full flex-col items-start justify-center gap-2">
-                <span className="font-semibold transition-colors">
-                  {peek.title}
-                </span>
-                <p className="text-xs text-muted-foreground">
-                  {peek.description}
-                </p>
-              </div>
-              <peek.Icon className="absolute right-4 top-4 size-4 text-muted-foreground transition-colors md:right-6 md:top-6" />
-            </Link>
-          ))}
-        </div>
+        <Shortcuts links={SHORTCUTS} />
 
         <div className="mt-12 flex items-center justify-center gap-2">
           <div className="relative flex gap-2">

@@ -12,8 +12,7 @@ export const InfiniteMovingCards = ({
   className,
 }: {
   items: {
-    quote: string
-    name: string
+    imageSrc: string
     title: string
   }[]
   direction?: 'left' | 'right'
@@ -89,7 +88,7 @@ export const InfiniteMovingCards = ({
         {items.map((item) => (
           <li
             className="relative h-[200px] w-[350px] max-w-full flex-shrink-0 overflow-hidden rounded-2xl border p-6 md:w-[350px]"
-            key={item.name}
+            key={item.title}
           >
             <div className="absolute inset-0 -z-10">
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60"></div>
